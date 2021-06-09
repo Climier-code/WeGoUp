@@ -1,9 +1,9 @@
 import axios from 'axios';
-import {AdviceAPIKEY} from '../key/apikey';
+import {NewsAPIKEY} from '../key/apikey';
 
 export async function getNews(national:string) {
     const response = await axios.get<News>(
-        `https://newsapi.org/v2/top-headlines?country=${national}&apiKey=${AdviceAPIKEY}`
+        `https://newsapi.org/v2/top-headlines?country=${national}&apiKey=${NewsAPIKEY}`
     );
 
     return response.data;

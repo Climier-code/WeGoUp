@@ -1,10 +1,13 @@
 import {combineReducers} from 'redux';
-import news from './news';
+import dailynews from './news';
 import {newsSaga} from './news';
+import dailystocks from './krstocks';
+import {krstocksSaga} from './krstocks';
 import {all} from 'redux-saga/effects';
 
 const rootReducer = combineReducers({
-    news
+    dailystocks,
+    dailynews
 });
 
 export default rootReducer;
