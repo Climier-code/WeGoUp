@@ -6,11 +6,7 @@ export async function getKRStocks(krstock: string) {
     const krstockNumber = parseInt(krstock);
 
     const response = await axios.get<KRStocks>(
-        `http://ecos.bok.or.kr/api/KeyStatisticList/${KRStockAPIKEY}/json/kr/${krstockNumber}/${krstockNumber+1}/`, {
-            headers: {
-                "Access-Control-Allow-Origin" : "*"
-            }
-        }
+        `http://ecos.bok.or.kr/api/KeyStatisticList/${KRStockAPIKEY}/json/kr/${krstockNumber}/${krstockNumber}/`
     );
 
     return response.data;

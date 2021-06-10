@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {RootState} from '../../moudles';
 import {getNewsAsync} from '../../moudles/news';
 import NewsItem from '../../components/News/NewsItem';
+import axios from 'axios';
 
 type NewsListProps = {
     national:string
@@ -16,6 +17,7 @@ function NewsList({national}:NewsListProps) {
         dispatch(getNewsAsync.request(national));
     };
 
+
     useEffect(() => {
         onNews(national);
     },[]);
@@ -25,7 +27,7 @@ function NewsList({national}:NewsListProps) {
             {loading && <p style={{ textAlign: 'center' }}>로딩중..</p>}
             {error && <p style={{ textAlign: 'center' }}>에러 발생!</p>}
             {data && data.articles.map(article => (
-                <NewsItem title={article.title} description={article.description} url={article.url} urlToImage={article.urlToImage} />
+                <NewsItem key={article.title} title={article.title} description={article.description} url={article.url} urlToImage={article.urlToImage} />
             ))}
         </div>
     );

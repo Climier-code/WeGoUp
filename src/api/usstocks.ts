@@ -1,11 +1,14 @@
 import axios from 'axios';
 import {USStockAPIKEY} from '../key/apikey';
 
+
 export async function getUSStocks(usstock: string) {
 
     const response = await axios.get<USStocks>(
         `https://cloud.iexapis.com/stable/stock/${usstock}/book?token=${USStockAPIKEY}`
+        
     );
+    
 
     return response.data;
 }
