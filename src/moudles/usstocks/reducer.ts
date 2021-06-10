@@ -1,8 +1,8 @@
 import {createReducer} from 'typesafe-actions';
-import {KRStocksState, KRStocksAction} from './types';
-import {GET_KRSTOCK, GET_KRSTOCK_SUCCESS, GET_KRSTOCK_ERROR} from './actions';
+import {USStocksState, USStocksAction} from './types';
+import {GET_USSTOCK, GET_USSTOCK_SUCCESS, GET_USSTOCK_ERROR} from './actions';
 
-const initialState: KRStocksState = {
+const initialState: USStocksState = {
     stocksContent: {
         loading: false,
         error: null,
@@ -10,8 +10,8 @@ const initialState: KRStocksState = {
     }
 };
 
-const dailykrstocks = createReducer<KRStocksState, KRStocksAction>(initialState, {
-    [GET_KRSTOCK]: state => ({
+const dailyusstocks = createReducer<USStocksState, USStocksAction>(initialState, {
+    [GET_USSTOCK]: state => ({
         ...state,
         stocksContent: {
             loading: true,
@@ -19,7 +19,7 @@ const dailykrstocks = createReducer<KRStocksState, KRStocksAction>(initialState,
             data: null
         }
     }),
-    [GET_KRSTOCK_SUCCESS]: (state, action) => ({
+    [GET_USSTOCK_SUCCESS]: (state, action) => ({
         ...state,
         stocksContent: {
             loading: false,
@@ -27,7 +27,7 @@ const dailykrstocks = createReducer<KRStocksState, KRStocksAction>(initialState,
             data: action.payload
         }
     }),
-    [GET_KRSTOCK_ERROR]: (state, action) => ({
+    [GET_USSTOCK_ERROR]: (state, action) => ({
         ...state,
         stocksContent: {
             loading: false,
@@ -37,4 +37,4 @@ const dailykrstocks = createReducer<KRStocksState, KRStocksAction>(initialState,
     })
 });
 
-export default dailykrstocks;
+export default dailyusstocks;
