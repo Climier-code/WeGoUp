@@ -7,12 +7,21 @@ import HangangNight from "../backgroundImg/Hangang-night.jpg";
 import Jeju from "../backgroundImg/Jeju.jpg";
 import Myeongdong from "../backgroundImg/Myeongdong.jpg";
 import axios from "axios";
-import { Icon } from "react-icons-kit";
-import { ic_keyboard_arrow_down } from "react-icons-kit/md/ic_keyboard_arrow_down";
+
 import moment from 'moment';
 import 'moment/locale/ko';
 import {useInterval} from 'react-use';
+import styled from '@emotion/styled';
 
+const GostockBlock = styled.button`
+    color: rgba(30, 22, 54, 0.6);
+    box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
+    font-size: 20px;
+    border-radius: 0.5rem;
+    &:hover {
+        box-shadow: #F2F2F2 0 80px 0px 2px inset;
+    }
+`;
 
 
 type imageProps = {
@@ -88,23 +97,33 @@ function Main () {
         <div
             css={css`
                 height: 100vh;
-                background: url(${images[imgNumber].src}) center;
+                background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url(${images[imgNumber].src}) center;
                 background-size: cover;
                 color: white;
             `}
         >
-            <div
-                css={css`
-                    font-size: 4rem;
-                    font-weight: 700;
-                    display: flex;
-                    justify-content: center;
-                    padding-top: 5rem;
-                `}
-            >
-                우리의 돈은 복사될 것입니다.<br />
-                {realTime}
+            <div css={css`
+                display: flex;
+                justify-content: center;
+                padding-top: 16rem;
+                flex-direction: column;
+                padding-left: 5rem;
+                font-size: 2rem;
+            `}>
+                <div
+                    css={css`
+                        font-size: 6rem;
+                        font-weight: 700;
+                        
+                    `}
+                >
+                    We go Up !<br />
+                    
+                </div>
+                <br />{realTime}
+                {timeCase===1 ? "오늘 하루도 파이팅!" : timeCase===2 ? <div>지금은 한국 주식 장이 열리는 시간입니다.<br /><GostockBlock>한국 주식 정보</GostockBlock></div> : timeCase===3 ? "오늘 하루도 수고했어요:)" : <div>지금은 해외 주식 장이 열리는 시간입니다.<br /><GostockBlock>해외 주식 정보</GostockBlock></div>}
             </div>
+
             <div
                 css={css`
                     position: absolute;
@@ -115,27 +134,8 @@ function Main () {
                 {`장소: ${images[imgNumber].name}`}
                 
             </div>
-            {timeCase===1 ? "일찍 일어나셨군요. 오늘 하루도 파이팅!" : timeCase===2 ? <button>한국 장으로</button> : timeCase===3 ? "저녁 먹고 조금만 쉽시다." : <button>해외 장으로</button>}
-            <div
-                css={css`
-                    position: absolute;
-                    bottom: 0;
-                    left: 50%;
-                    animation: blink-effect 2s ease-in-out infinite;
-
-                    @keyframes blink-effect {
-                        0% {
-                            opacity: 0;
-                        }
-
-                        50% {
-                            bottom: 1rem;
-                        }
-                    }
-                `}
-            >
-                <Icon size={"20%"} icon={ic_keyboard_arrow_down} />
-            </div>
+            
+            
         </div>
     );
 };
