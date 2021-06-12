@@ -17,9 +17,10 @@ export const AdviceandStockBlock = styled.div`
     justify-content:center;
     align-items:center;
     flex-direction: column;
-    margin: 6rem;
+    margin: 4rem;
     border: solid 0.15rem;
     box-shadow: 0.5rem 0.5rem;
+    padding: 1rem;
 
     @media screen and (max-width: 768px) {
         margin: 3rem 0; 

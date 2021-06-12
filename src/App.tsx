@@ -1,22 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import KrEconomyLoader from './containers/KrBusiness';
-import USStockLoader from './components/Stocks/USStockLoader';
 import UsBusiness from './containers/UsBusiness';
 import Main from './containers/Main';
-import Header from './components/Header';
+import Header from './containers/Header';
 import KrBusiness from './containers/KrBusiness';
 import About from './containers/About';
+import {Route} from 'react-router-dom';
 
 function App() {
   return (
     <div>
       <Header />
-      {/* <Main /> */}
-      <About />
-      {/* <KrBusiness /> */}
-      {/* <UsBusiness /> */}
+      <Route path="/" component={Main} exact/>
+      <Route path="/about" component={About} />
+      <Route path="/krbusiness" component={KrBusiness} />
+      <Route path="/usbusiness" component={UsBusiness} />
+      {/* <Route path="/bitcoin" component={Bitcoin} /> */}
     </div>
   );
 }

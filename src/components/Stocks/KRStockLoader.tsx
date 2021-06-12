@@ -5,7 +5,6 @@ import StockInfo from './StockInfo';
 import { getKRStockAsync } from '../../moudles/krstocks';
 import SearchStockForm from './SearchStockForm';
 import {Spin} from 'antd';
-import styled from '@emotion/styled';
 import { AdviceandStockBlock } from './USStockLoader';
 
 

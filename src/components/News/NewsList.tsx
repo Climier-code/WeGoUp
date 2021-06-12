@@ -3,7 +3,6 @@ import {useDispatch, useSelector} from 'react-redux';
 import {RootState} from '../../moudles';
 import {getNewsAsync} from '../../moudles/news';
 import NewsItem from '../../components/News/NewsItem';
-import axios from 'axios';
 import styled from '@emotion/styled';
 
 const NewsListBlock = styled.div`
@@ -22,6 +21,7 @@ function NewsList({national}:NewsListProps) {
     const {data, loading, error } =useSelector((state:RootState) => state.dailynews.newsContent);
     const dispatch = useDispatch();
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const onNews = (national: string) => {
         dispatch(getNewsAsync.request(national));
     };
@@ -29,7 +29,7 @@ function NewsList({national}:NewsListProps) {
 
     useEffect(() => {
         onNews(national);
-    },[]);
+    },[national, onNews]);
 
     return (
         <NewsListBlock>

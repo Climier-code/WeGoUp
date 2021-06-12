@@ -1,20 +1,37 @@
-/** @jsxImportSource @emotion/react */
-import { css, jsx } from "@emotion/react";
 import React, {useState} from 'react';
-import styled, { StyledComponent } from '@emotion/styled';
-import { ComponentProps } from 'react';
-import MenuOutlined from '@ant-design/icons';
+import styled from '@emotion/styled';
 import { Icon } from "react-icons-kit";
 import {menu} from 'react-icons-kit/icomoon/menu'
+import {Link} from 'react-router-dom';
 
-type CategoriesType = string[]
+type CategoriesType = CategoryType[]
+
+type CategoryType = {
+    name: string;
+    text: string;
+}
 
 const categories:CategoriesType = [
-    "Home",
-    "About",
-    "Korea Stock",
-    "USD Stock",
-    "BitCoin"
+    {
+        "name":"",
+        "text": "Home"
+    },
+    {
+        "name":"about",
+        "text": "About"
+    },
+    {
+        "name":"krbusiness",
+        "text": "Korea Stock"
+    },
+    {
+        "name":"usbusiness",
+        "text": "USD Stock"
+    },
+    {
+        "name":"bitcoin",
+        "text": "BitCoin"
+    }
 ]
 
 const CategoriesBeforeBlock = styled.div`
@@ -79,6 +96,15 @@ const Category= styled.div`
 
         font-size: 0.25rem;
     }
+
+    .default-link{
+        text-decoration: none !important;
+        color: white;
+
+        &:hover {
+            color: #495057;
+        }
+    }
 `;
 
 
@@ -93,14 +119,23 @@ function Header() {
 
     return(
         <div>
-            {!navon ? <CategoriesBeforeBlock> <div onClick={onClosenav}>
-                <Icon size={"20"} icon={menu} />
-            </div></CategoriesBeforeBlock> : <CategoriesBlock>
-                    <Category key="X" onClick={onClosenav}>X</Category>
-                    {categories.map(category => (
-                        <Category key={category}>{category}</Category>
-                    ))}
-                </CategoriesBlock>}
+            {!navon ? 
+            <CategoriesBeforeBlock>
+                <div onClick={onClosenav}>
+                    <Icon size={"20"} icon={menu} />
+                </div>
+            </CategoriesBeforeBlock> 
+            : 
+            <CategoriesBlock>
+                <Category key="X" onClick={onClosenav}>X</Category>
+                {categories.map(category => (
+                    <Category key={category.name} onClick={onClosenav}>
+                        <Link to={`/${category.name}`} className="default-link">
+                            {category.text}
+                        </Link>
+                    </Category>
+                ))}
+            </CategoriesBlock>}
         </div> 
     )
 }

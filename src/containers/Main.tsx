@@ -1,25 +1,29 @@
 /** @jsxImportSource @emotion/react */
 import React, { useState, useEffect } from "react";
-import { css, jsx } from "@emotion/react";
+import { css } from "@emotion/react";
 import Anapji from "../backgroundImg/Anapji.jpg";
 import Hangang from "../backgroundImg/Hangang.jpg";
 import HangangNight from "../backgroundImg/Hangang-night.jpg";
 import Jeju from "../backgroundImg/Jeju.jpg";
 import Myeongdong from "../backgroundImg/Myeongdong.jpg";
-import axios from "axios";
-
+import {Link} from 'react-router-dom';
 import moment from 'moment';
 import 'moment/locale/ko';
 import {useInterval} from 'react-use';
 import styled from '@emotion/styled';
 
 const GostockBlock = styled.button`
-    color: rgba(30, 22, 54, 0.6);
+    
     box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
-    font-size: 20px;
     border-radius: 0.5rem;
-    &:hover {
-        box-shadow: #F2F2F2 0 80px 0px 2px inset;
+    
+    .default-link{
+        text-decoration: none !important;
+        color: rgba(30, 22, 54, 0.6);
+        font-size: 20px;
+        &:hover {
+            box-shadow: #F2F2F2 0 80px 0px 2px inset;
+        }
     }
 `;
 
@@ -130,7 +134,18 @@ function Main () {
                 </div>
                 <br />{realTime}
                 <br />
-                {timeCase===1 ? "오늘 하루도 파이팅!" : timeCase===2 ? <div>지금은 한국 주식 장이 열리는 시간입니다.<br /><GostockBlock>한국 주식 정보</GostockBlock></div> : timeCase===3 ? "오늘 하루도 수고했어요:)" : <div>지금은 해외 주식 장이 열리는 시간입니다.<br /><GostockBlock>해외 주식 정보</GostockBlock></div>}
+                {timeCase===1 ? 
+                    "오늘 하루도 파이팅!" 
+                    : timeCase===2 ? 
+                    <div>지금은 한국 주식 장이 열리는 시간입니다.<br />
+                        <GostockBlock><Link to="/krbusiness" className="default-link">한국 주식 정보</Link></GostockBlock>
+                    </div> 
+                    : timeCase===3 ? 
+                    "오늘 하루도 수고했어요:)" 
+                    : <div>지금은 해외 주식 장이 열리는 시간입니다.<br />
+                        <GostockBlock><Link to="/usbusiness" className="default-link">해외 주식 정보</Link></GostockBlock>
+                    </div>
+                }
             </div>
 
             <div
