@@ -7,13 +7,15 @@ import UsBusiness from './containers/UsBusiness';
 import Main from './containers/Main';
 import Header from './components/Header';
 import KrBusiness from './containers/KrBusiness';
+import About from './containers/About';
 
 function App() {
   return (
     <div>
       <Header />
       {/* <Main /> */}
-      <KrBusiness />
+      <About />
+      {/* <KrBusiness /> */}
       {/* <UsBusiness /> */}
     </div>
   );
