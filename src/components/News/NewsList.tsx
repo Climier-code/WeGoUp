@@ -11,6 +11,7 @@ const NewsListBlock = styled.div`
     border-radius: 1rem;
     box-shadow: 0.5rem 0.5rem;
     padding: 1rem;
+    margin-right: 0.5rem;
 `;
 
 type NewsListProps = {
