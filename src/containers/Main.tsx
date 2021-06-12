@@ -114,7 +114,9 @@ function Main () {
                 font-size: 2rem;
 
                 @media screen and (max-width: 768px) {
-
+                    padding-left: 0rem;
+                    margin-left:1rem;
+                    margin-right: 1rem;
                     font-size: 1.5rem;
                 }
             `}>
@@ -133,7 +135,7 @@ function Main () {
                     
                 </div>
                 <br />{realTime}
-                <br />
+                <br /><br />
                 {timeCase===1 ? 
                     "오늘 하루도 파이팅!" 
                     : timeCase===2 ? 

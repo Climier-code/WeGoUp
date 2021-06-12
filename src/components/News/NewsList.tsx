@@ -21,7 +21,6 @@ function NewsList({national}:NewsListProps) {
     const {data, loading, error } =useSelector((state:RootState) => state.dailynews.newsContent);
     const dispatch = useDispatch();
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     const onNews = (national: string) => {
         dispatch(getNewsAsync.request(national));
     };
@@ -29,7 +28,8 @@ function NewsList({national}:NewsListProps) {
 
     useEffect(() => {
         onNews(national);
-    },[national, onNews]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[]);
 
     return (
         <NewsListBlock>

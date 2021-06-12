@@ -46,6 +46,12 @@ const CategoriesBeforeBlock = styled.div`
     justify-content: center;
     flex-direction: column;
     opacity:0.3;
+
+    @media screen and (max-width: 768px) {
+        top: 0;
+        width: 100%;
+        height: 3rem;
+    }
 `;
 
 const CategoriesBlock = styled.div`
@@ -70,6 +76,18 @@ const CategoriesBlock = styled.div`
         0% {
             width: 0;
             height: 100%;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+
+        animation: blink-mobile-effect 0.2s ease-in;
+
+        @keyframes blink-mobile-effect {
+            0% {
+                width: 100%;
+                height: 0;
+            }
         }
     }
 `;
