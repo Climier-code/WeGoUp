@@ -1,6 +1,10 @@
 import React from 'react';
 import {Statistic, Row, Col, Button} from 'antd';
 
+
+
+
+
 type StockInfoProps = {
     companyName: string;
     nowPrice: number;

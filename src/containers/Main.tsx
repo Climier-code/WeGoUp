@@ -38,7 +38,6 @@ const images:imageProps[] = [
 ];
 
 function Main () {
-    const [advice, setAdvice] = useState<string>('');
     const [imgNumber, setImgNumber] = useState<number>(0);
 
     const [realTime, setRealTime] = useState(moment().format('YYYY-MM-DD HH:mm'));
@@ -109,11 +108,20 @@ function Main () {
                 flex-direction: column;
                 padding-left: 5rem;
                 font-size: 2rem;
+
+                @media screen and (max-width: 768px) {
+
+                    font-size: 1.5rem;
+                }
             `}>
                 <div
                     css={css`
                         font-size: 6rem;
                         font-weight: 700;
+                        @media screen and (max-width: 768px) {
+
+                            font-size: 3rem;
+                        }
                         
                     `}
                 >
@@ -121,6 +129,7 @@ function Main () {
                     
                 </div>
                 <br />{realTime}
+                <br />
                 {timeCase===1 ? "오늘 하루도 파이팅!" : timeCase===2 ? <div>지금은 한국 주식 장이 열리는 시간입니다.<br /><GostockBlock>한국 주식 정보</GostockBlock></div> : timeCase===3 ? "오늘 하루도 수고했어요:)" : <div>지금은 해외 주식 장이 열리는 시간입니다.<br /><GostockBlock>해외 주식 정보</GostockBlock></div>}
             </div>
 

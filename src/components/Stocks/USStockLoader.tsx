@@ -7,13 +7,23 @@ import SearchStockForm from './SearchStockForm';
 import {Spin} from 'antd';
 import styled from '@emotion/styled';
 
-const LoadingBlock = styled.div`
-    margin: 20px 0;
-    margin-bottom: 20px;
-    padding: 30px 50px;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.05);
-    border-radius: 4px;
+export const AdviceandStockBlock = styled.div`
+    width: 20rem;
+    height: 20rem;
+    background: #6E6E6E;
+    color: #ffffff;
+    border-radius: 2rem;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
+    margin: 6rem;
+    border: solid 0.15rem;
+    box-shadow: 0.5rem 0.5rem;
+
+    @media screen and (max-width: 768px) {
+        margin: 3rem 0; 
+    }
 `;
 
 
@@ -27,12 +37,12 @@ function USStockLoader () {
 
 
     return(
-        <div>
+        <AdviceandStockBlock>
             <SearchStockForm onSubmitStockcode={onSubmitStockcode} />
             {loading && <Spin tip="Loading..."/>}
             {error && <p style={{ textAlign: 'center' }}>에러 발생!</p>}
             {data && <StockInfo companyName={data.quote.companyName} nowPrice={data.quote.latestPrice} highPrice={data.quote.high} lowPrice={data.quote.low} />}
-        </div>
+        </AdviceandStockBlock>
     )
 }
 

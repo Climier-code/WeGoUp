@@ -4,6 +4,14 @@ import {RootState} from '../../moudles';
 import {getNewsAsync} from '../../moudles/news';
 import NewsItem from '../../components/News/NewsItem';
 import axios from 'axios';
+import styled from '@emotion/styled';
+
+const NewsListBlock = styled.div`
+    border: solid 0.15rem;
+    border-radius: 1rem;
+    box-shadow: 0.5rem 0.5rem;
+    padding: 1rem;
+`;
 
 type NewsListProps = {
     national:string
@@ -23,13 +31,13 @@ function NewsList({national}:NewsListProps) {
     },[]);
 
     return (
-        <div>
+        <NewsListBlock>
             {loading && <p style={{ textAlign: 'center' }}>로딩중..</p>}
             {error && <p style={{ textAlign: 'center' }}>에러 발생!</p>}
             {data && data.articles.map(article => (
                 <NewsItem key={article.title} title={article.title} description={article.description} url={article.url} urlToImage={article.urlToImage} />
             ))}
-        </div>
+        </NewsListBlock>
     );
 }
 
