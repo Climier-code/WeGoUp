@@ -3,11 +3,19 @@ import styled from '@emotion/styled';
 
 
 const BitcodeformBlock = styled.form`
-    margin: 2rem auto;
+    margin: 0 auto;
     justify-content:center;
     align-items: center;
+    padding: 2rem;
+
+    input {
+        width: 12rem;
+    }
 
     @media screen and (max-width: 768px) {
+        padding: 0;
+        margin-top: 4rem;
+        margin-bottom: 2rem;
         display: flex;
     }
     
