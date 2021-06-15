@@ -20,7 +20,8 @@ function SearchStockForm({onSubmitStockcode}: SearchStockFormProps) {
 
     return (
         <form onSubmit={onSubmit}>
-            <input onChange={onChange} value={input} placeholder="주식 코드를 입력해주세요." />
+            <h3>종목 코드를 입력해주세요.</h3>
+            <input onChange={onChange} value={input} placeholder="(ex.035420 or tsla)" />
             <button type="submit">조회</button>
         </form>
     );

@@ -42,7 +42,7 @@ function USStockLoader () {
             <SearchStockForm onSubmitStockcode={onSubmitStockcode} />
             {loading && <Spin tip="Loading..."/>}
             {error && <p style={{ textAlign: 'center' }}>에러 발생!</p>}
-            {data && <StockInfo companyName={data.quote.companyName} nowPrice={data.quote.latestPrice} highPrice={data.quote.high} lowPrice={data.quote.low} />}
+            {data && <StockInfo companyName={data.quote.companyName} nowPrice={data.quote.latestPrice} highPrice={data.quote.high} lowPrice={data.quote.low}  closePrice={data.quote.close}/>}
         </AdviceandStockBlock>
     )
 }

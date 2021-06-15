@@ -24,7 +24,7 @@ function KRStockLoader () {
             <SearchStockForm onSubmitStockcode={onSubmitStockcode} />
             {loading && <Spin tip="Loading..."/>}
             {error && <p style={{ textAlign: 'center' }}>에러 발생!</p>}
-            {data && <StockInfo companyName={data.data[0].symbol} nowPrice={data.data[0].open} highPrice={data.data[0].high} lowPrice={data.data[0].low} />}
+            {data && <StockInfo companyName={data.data[0].symbol} nowPrice={data.data[0].open} highPrice={data.data[0].high} lowPrice={data.data[0].low} closePrice={data.data[0].close} />}
         </AdviceandStockBlock>
     )
 }
