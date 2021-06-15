@@ -6,15 +6,17 @@ import Header from './containers/Header';
 import KrBusiness from './containers/KrBusiness';
 import About from './containers/About';
 import {Route} from 'react-router-dom';
+import ChartCandlesInfo from './components/Bitcoin/ChartCandlesInfo';
 
 function App() {
   return (
     <div>
-      <Header />
+      {/* <Header />
       <Route path="/" component={Main} exact/>
       <Route path="/about" component={About} />
       <Route path="/krbusiness" component={KrBusiness} />
-      <Route path="/usbusiness" component={UsBusiness} />
+      <Route path="/usbusiness" component={UsBusiness} /> */}
+      <ChartCandlesInfo />
       {/* <Route path="/bitcoin" component={Bitcoin} /> */}
     </div>
   );

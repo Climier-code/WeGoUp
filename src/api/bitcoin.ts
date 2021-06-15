@@ -4,14 +4,16 @@ import axios from 'axios';
 export async function getBitCandle(bitcoinname :string) {
     
     const response = await axios.get<BitcoinCandles> (
-        `https://api.upbit.com/v1/candles/minutes/1?market=${bitcoinname}C&count=200`
+        `https://api.upbit.com/v1/candles/minutes/1?market=${bitcoinname}&count=200`
         
     );
 
     return response.data;
 }
 
-export interface BitcoinCandles {
+export type BitcoinCandles = BitcoinCandle[]
+
+export interface BitcoinCandle {
     market:                  string;
     candle_date_time_utc:    Date;
     candle_date_time_kst:    Date;
