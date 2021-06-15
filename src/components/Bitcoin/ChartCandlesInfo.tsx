@@ -1,14 +1,35 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {RootState} from '../../moudles';
 import {getBitcoinAsync} from '../../moudles/bitcoin';
 import ReactApexChart from 'react-apexcharts';
 import moment from 'moment';
+import SearchBitcoinForm from './SearchBitcoinform';
+import styled from '@emotion/styled';
+
+const ChartBlock = styled.div`
+    
+
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    flex-direction: column;
+    @media (min-width: 768px) {
+        width: 80%;
+
+    }
+
+    ReactApexChart {
+        padding-top: 15rem;
+    }
+`;
 
 
 
 
 function ChartCandlesInfo() {
+
+    const [bitcoincode, setBitcoincode] = useState<string>("KRW-BTC");
     const {data, loading, error} = useSelector((state: RootState) => state.bitcoinMincandles.bitcoinCandles);
     const dispatch = useDispatch();
 
@@ -16,11 +37,26 @@ function ChartCandlesInfo() {
         dispatch(getBitcoinAsync.request("KRW-BTC"));
     },[])
 
+    const onSubmitBitcoincode = (Bitcoincode:string) => {
+        setBitcoincode(Bitcoincode);
+        dispatch(getBitcoinAsync.request(Bitcoincode));
+    };
+
     const state = {
         options: {
             chart: {
-            id: "Bitcoin-Chart"
+                id: "Bitcoin-Chart"
             },
+            title : {
+                text: bitcoincode,
+                // style: {
+                //     fontSize:  '2rem',
+                //     fontWeight:  'bold',
+                //     fontFamily:  undefined,
+                //     color:  '#263238'
+                // }
+            }
+            
             // xaxis: {
             //     categories: data && data.map(candle => (
             //         moment.unix(candle.timestamp).format("HH:MM")
@@ -36,14 +72,21 @@ function ChartCandlesInfo() {
     };
 
     return (
-        <div>
-            <ReactApexChart
-                options={state.options}
-                series={state.series}
-                type="candlestick"
-                height={500}>
-            </ReactApexChart>
-        </div>
+        <ChartBlock>
+            <SearchBitcoinForm onSubmitBitcoincode={onSubmitBitcoincode} />
+            {loading && <p style={{ textAlign: 'center' }}>로딩 중</p>}
+            {error && <p style={{ textAlign: 'center' }}>에러 발생!</p>}
+            {data && 
+                <ReactApexChart
+                    options={state.options}
+                    series={state.series}
+                    title = {bitcoincode}
+                    type="candlestick"
+                    height={800}
+                    witdh={300}>
+                </ReactApexChart>
+            }
+        </ChartBlock>
     );
 
 }
