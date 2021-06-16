@@ -1,8 +1,8 @@
 import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {RootState} from '../../moudles';
+import {RootState} from '../../modules';
 import StockInfo from './StockInfo';
-import {getUSStockAsync} from '../../moudles/usstocks';
+import {getUSStockAsync} from '../../modules/usstocks';
 import SearchStockForm from './SearchStockForm';
 import {Spin} from 'antd';
 import styled from '@emotion/styled';

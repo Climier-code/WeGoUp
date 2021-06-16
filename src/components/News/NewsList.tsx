@@ -1,7 +1,7 @@
 import React,{useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {RootState} from '../../moudles';
-import {getNewsAsync} from '../../moudles/news';
+import {RootState} from '../../modules';
+import {getNewsAsync} from '../../modules/news';
 import NewsItem from '../../components/News/NewsItem';
 import styled from '@emotion/styled';
 

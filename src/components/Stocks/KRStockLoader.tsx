@@ -1,8 +1,8 @@
 import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {RootState} from '../../moudles';
+import {RootState} from '../../modules';
 import StockInfo from './StockInfo';
-import { getKRStockAsync } from '../../moudles/krstocks';
+import { getKRStockAsync } from '../../modules/krstocks';
 import SearchStockForm from './SearchStockForm';
 import {Spin} from 'antd';
 import { AdviceandStockBlock } from './USStockLoader';

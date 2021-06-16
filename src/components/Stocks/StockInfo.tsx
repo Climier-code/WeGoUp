@@ -1,14 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import React from 'react';
-import styled from '@emotion/styled';
 import {css} from '@emotion/react';
-
-const riseorfallBlock = styled.div`
-
-`;
-
-
-
 
 
 type StockInfoProps = {
@@ -21,7 +13,7 @@ type StockInfoProps = {
 
 function StockInfo ({companyName, nowPrice, highPrice, lowPrice, closePrice}:StockInfoProps) {
 
-    const riseorfall = closePrice > nowPrice ? 'red' : 'blue'
+    const riseorfall:string = closePrice > nowPrice ? 'red' : 'blue'
     return (
         <div>
             <h1>{companyName}</h1>

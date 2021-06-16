@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {RootState} from '../../moudles';
-import {getBitcoinAsync} from '../../moudles/bitcoin';
+import {RootState} from '../../modules';
+import {getBitcoinAsync} from '../../modules/bitcoin';
 import ReactApexChart from 'react-apexcharts';
 import moment from 'moment';
 import SearchBitcoinForm from './SearchBitcoinform';
@@ -35,6 +35,7 @@ function ChartCandlesInfo() {
 
     useEffect(() => {
         dispatch(getBitcoinAsync.request("KRW-BTC"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
     const onSubmitBitcoincode = (Bitcoincode:string) => {
