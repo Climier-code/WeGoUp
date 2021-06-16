@@ -45,7 +45,7 @@ const CategoriesBeforeBlock = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    opacity:0.3;
+    opacity:0.6;
 
     @media screen and (max-width: 768px) {
         top: 0;

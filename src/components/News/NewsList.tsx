@@ -11,6 +11,13 @@ const NewsListBlock = styled.div`
     box-shadow: 0.5rem 0.5rem;
     padding: 1rem;
     margin-right: 0.5rem;
+
+    @media (min-width: 768px) {
+        height: 50rem;
+
+        overflow-y: auto;
+
+    }
 `;
 
 type NewsListProps = {

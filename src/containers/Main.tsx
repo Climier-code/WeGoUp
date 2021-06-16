@@ -64,7 +64,9 @@ function Main () {
             if (nowHour === 23 && 30 <= moment().minute()){
                 setTimecase(4)
             }
-            setTimecase(3)
+            else {
+                setTimecase(3)
+            }
         }
         else {
             setTimecase(4)
