@@ -2,7 +2,8 @@
 
 > [한강물 측정기](https://hangang.ivlis.kr/) 홈페이지에서 영감을 받아 만든 웹페이지
 
-// gif 추가 예정
+**Home**
+<img src="./gif/mainpage.gif" />
 
 ## Project Outline
 
@@ -144,6 +145,10 @@
       <a href="https://api.adviceslip.com/advice" target="_blank">Advice Slip JSON API</a>(해외 명언)<br/>
       </div><br/>
       </details>
+
+## 개발 회고
+
+-   [WegoUp 프로젝트 회고](https://velog.io/@whddus0789/WegoUp-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B0%9C%EB%B0%9C-%ED%9A%8C%EA%B3%A0-1)
 
 ## Technical Issue
 
