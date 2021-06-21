@@ -2,8 +2,7 @@
 
 > [한강물 측정기](https://hangang.ivlis.kr/) 홈페이지에서 영감을 받아 만든 웹페이지
 
-**Home**
-<img src="./gif/mainpage.gif" />
+![image](https://user-images.githubusercontent.com/55488800/122700462-4a5d2100-d286-11eb-8a83-615ea3a3332c.png)
 
 ## Project Outline
 
@@ -146,9 +145,31 @@
       </div><br/>
       </details>
 
+## view
+
+### Home
+<img src="./gif/mainpage.gif" width="540"/>
+
+### about
+<img src="./gif/aboutpage.gif" width="540" />
+
+### krstock
+<img src="./gif/krstock.gif" width="540" />
+
+### usstock
+<img src="./gif/usstock.gif" width="540" />
+
+### bitcoin
+<img src="./gif/bitcoinpage.gif" width="540" />
+
+### responsive
+<img src="./gif/mainpagemobile.gif" width="540" />
+<img src="./gif/stock-mobile.gif" width="540" />
+                                    
+
 ## 개발 회고
 
--   [WegoUp 프로젝트 회고](https://velog.io/@whddus0789/WegoUp-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B0%9C%EB%B0%9C-%ED%9A%8C%EA%B3%A0-1)
+- [WegoUp 프로젝트 회고](https://velog.io/@whddus0789/WegoUp-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B0%9C%EB%B0%9C-%ED%9A%8C%EA%B3%A0-1)
 
 ## Technical Issue
 
