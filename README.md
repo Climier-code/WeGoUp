@@ -4,7 +4,11 @@
 
 ### 낮(한국 주식 열리는 시간)
 
-<img src="./img/mainpage-day.png" />
+<img src="./img/mainpage-day-1.png" />
+
+### 낮과 밤사이
+
+<img src="./img/mainpage-midnight.png" />
 
 ### 밤(해외 주식 열리는 시간)
 
@@ -178,11 +182,10 @@
 <img src="./img/mainpagemobile.gif" width="540" />
 <img src="./img/stock-mobile.gif" width="540" />
 
-
 ## 개발 회고
 
 -   [WegoUp 프로젝트 회고](https://velog.io/@whddus0789/WegoUp-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B0%9C%EB%B0%9C-%ED%9A%8C%EA%B3%A0-1)
 
 ## Technical Issue
 
-// 업데이트 예정
+-   [CORS 해결하기](https://velog.io/@whddus0789/WegoUp-프로젝트-개발-회고-2)
